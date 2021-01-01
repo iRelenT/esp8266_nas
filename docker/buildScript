@@ -1,0 +1,13 @@
+#! /bin/bash
+
+
+docker build -f ./dFileEsp8266New -t espenv .
+docker run -d --device=/dev/ttyUSB0 -v /home/xhemail/dev/cross_language_project/esp8266/esp8266_nas/esp_test:/projects --privileged --name container_esp_test espenv tail -f /dev/null
+
+
+
+# for entering container with bash
+# docker exec -it container_esp_test bash
+
+
+
